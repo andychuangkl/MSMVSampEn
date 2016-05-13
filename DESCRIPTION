@@ -1,0 +1,14 @@
+Package: MSMVSampEn
+Type: Package
+Title: Computes Multiscale Multivariate Sample Entropy
+Version: 1.0
+Date: 2016-05-12
+Author: Corson N. Areshenkoff
+Maintainer: Corson N. Areshenkoff <areshenk@protonmail.com>
+Description: Computes the sample entropy of a multivariate time series
+at multiple time scales using the procedure described in Ahmed and Mandic 
+(2011): "Multivariate multiscale entropy: A tool for complexity analysis 
+of multichannel data"
+License: GPL-3
+Imports: Rcpp (>= 0.12.3), RcppArmadillo
+LinkingTo: Rcpp, RcppArmadillo
