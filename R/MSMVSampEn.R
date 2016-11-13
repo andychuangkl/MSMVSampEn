@@ -11,6 +11,6 @@ MSMVSampEn = function(mat, M, tau, r, eps, scaleMat = TRUE){
   #   eps:      An integer specifying the time scale
   #   scaleMat: Whether or not to scale the rows of the time series
 
-  X <- coarsegrainMultivariate(mat, eps)
+  X <- MSMVSampEn:::coarsegrainMultivariate(mat, eps)
   return(MVSampEn(X, M, tau, r, scaleMat))
 }
