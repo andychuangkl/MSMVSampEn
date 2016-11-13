@@ -4,13 +4,13 @@ MSMVSampEn = function(mat, M, tau, r, eps, scaleMat = TRUE){
   # computed for the specified time scale.
   #
   # Function accepts six arguments:
-  #   mat: a pxn matrix containing a p-variate time series
-  #   M: A vector of length p specifying the embedding dimension
-  #   tau: A vector of length p specifying the time lag parameter
-  #   r: The similarity threshold
-  #   eps: An integer specifying the time scale
+  #   mat:      A pxn matrix containing a p-variate time series
+  #   M:        A vector of length p specifying the embedding dimension
+  #   tau:      A vector of length p specifying the time lag parameter
+  #   r:        The similarity threshold
+  #   eps:      An integer specifying the time scale
   #   scaleMat: Whether or not to scale the rows of the time series
 
-  X = coarsegrainMultivariate(mat, eps)
+  X <- coarsegrainMultivariate(mat, eps)
   return(MVSampEn(X, M, tau, r, scaleMat))
 }

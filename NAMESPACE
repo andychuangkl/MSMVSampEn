@@ -1,3 +1,3 @@
 useDynLib(MSMVSampEn)
-exportPattern("^[[:alpha:]]+")
+export(MVSampEn, MSMVSampEn)
 importFrom(Rcpp, evalCpp)
