@@ -4,7 +4,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-NumericMatrix embed(NumericMatrix mat, NumericVector M, NumericVector tau) {
+NumericMatrix vectorEmbed(NumericMatrix mat, NumericVector M, NumericVector tau) {
 
     int m = mat.nrow(),
         n = mat.ncol();
