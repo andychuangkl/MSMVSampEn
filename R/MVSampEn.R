@@ -37,8 +37,8 @@ MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
   # Count the number of match templates of length m closed within
   # the tolerance r.
   N  <- nSamples - nn
-  A  <- embed(mat, M, tau)
-  v1 <- similarityCount(A, r)
+  A  <- MSMVSampEn::embed(mat, M, tau)
+  v1 <- MSMVSampEn::similarityCount(A, r)
   p1 <- 2 * v1 / (N * (N-1))
 
   # Error checking
