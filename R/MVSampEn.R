@@ -1,4 +1,4 @@
-MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
+MVSampEn = function(data, M, tau, r, scaleMat = TRUE){
   # Returns the multivariate entropy of a time series. Function accepts
   # five arguments:
   #   mat:      A pxn matrix containing a p-variate time series
@@ -49,10 +49,10 @@ MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
   M2 <- matrix(rep(M, nVariables), nrow = nVariables, byrow = T) + I
   B  <- NULL
   for (i in 1:nVariables){
-    dummy <- embed(mat, M2[i,], tau)
+    dummy <- MSMVSampEn::embed(mat, M2[i,], tau)
     B     <- rbind(B, dummy)
   }
-  v2 <- similarityCount(B, r)
+  v2 <- MSMVSampEn::similarityCount(B, r)
   p2 <- 2 * v2 / (nVariables * N * (nVariables * N-1))
 
   # Error checking
