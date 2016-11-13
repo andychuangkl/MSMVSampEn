@@ -2,10 +2,10 @@
 \alias{MSMVSampEn}
 \title{Multivariate Multiscale Sample Entropy}
 \usage{
-    MSMVSampEn(data, M, tau, r, eps = 1, scaleMat = TRUE)
+    MSMVSampEn(mat, M, tau, r, eps = 1, scaleMat = TRUE)
 }
 \arguments{
-    \item{data}{pxn matrix containing a p-variate time series}
+    \item{mat}{pxn matrix containing a p-variate time series}
     
     \item{M}{vector of length p specifying the embedding dimension}
     
@@ -15,7 +15,7 @@
     
     \item{eps}{Time scale parameter. eps = 1 is equivalent to MVSampEn}
     
-    \item{scaleMat}{if TRUE, the rows of data are scaled to have zero mean and unit variance}
+    \item{scaleMat}{if TRUE, the rows of mat are scaled to have zero mean and unit variance}
 }
 \value{
     Scalar value indicating the estimated sample entropy at time scale eps.

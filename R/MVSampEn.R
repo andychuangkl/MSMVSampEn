@@ -1,4 +1,4 @@
-MVSampEn = function(data, M, tau, r, scaleMat = TRUE){
+MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
   # Returns the multivariate entropy of a time series. Function accepts
   # five arguments:
   #   mat:      A pxn matrix containing a p-variate time series

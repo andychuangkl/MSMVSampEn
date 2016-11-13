@@ -1,4 +1,4 @@
-MSMVSampEn = function(data, M, tau, r, eps, scaleMat = TRUE){
+MSMVSampEn = function(mat, M, tau, r, eps, scaleMat = TRUE){
   # Wrapper for entropy.R that allows the user to specify an integer scale
   # parameter eps. The time series is coarsegrained, and then the entropy is
   # computed for the specified time scale.

@@ -5,7 +5,7 @@
     MVSampEn(data, M, tau, r, scaleMat = TRUE)
 }
 \arguments{
-    \item{data}{pxn matrix containing a p-variate time series}
+    \item{mat}{pxn matrix containing a p-variate time series}
     
     \item{M}{vector of length p specifying the embedding dimension}
     
@@ -13,7 +13,7 @@
     
     \item{r}{scalar similarity threshold}
     
-    \item{scaleMat}{if TRUE, the rows of data are scaled to have zero mean and unit variance}
+    \item{scaleMat}{if TRUE, the rows of mat are scaled to have zero mean and unit variance}
 }
 \value{
     Scalar value indicating the estimated sample entropy
