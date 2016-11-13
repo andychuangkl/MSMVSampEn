@@ -2,17 +2,17 @@
 \alias{MVSampEn}
 \title{Multivariate Sample Entropy}
 \usage{
-    MVSampEn(data, M, tau, r, scaleMat = TRUE)
+    MVSampEn(mat, M, tau, r, scaleMat = TRUE)
 }
 \arguments{
     \item{mat}{pxn matrix containing a p-variate time series}
-    
+
     \item{M}{vector of length p specifying the embedding dimension}
-    
+
     \item{tau}{vector of length p specifying the time lag parameter}
-    
+
     \item{r}{scalar similarity threshold}
-    
+
     \item{scaleMat}{if TRUE, the rows of mat are scaled to have zero mean and unit variance}
 }
 \value{
@@ -25,7 +25,7 @@
 \examples{
     # Generate a 3-dimensional time series containing white noise.
     data <- matrix(rnorm(3000), nrow = 3)
-    
+
     # Compute entropy
     MVSampEn(data, M = c(2,2,2), tau = c(1,1,1), r = .5, scaleMat = TRUE)
 }

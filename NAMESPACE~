@@ -1,0 +1,3 @@
+useDynLib(MSMVSampEn)
+export(MVSampEn, MSMVSampEn)
+importFrom(Rcpp, evalCpp)
