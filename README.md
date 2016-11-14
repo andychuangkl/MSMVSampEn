@@ -1,5 +1,5 @@
 # MSMVSampEn
-R package (in progress) implementing the multiscale multivariate sample entropy
+R package implementing the multiscale multivariate sample entropy
 measure described by Ahmed and Mandic (2011). The implementation is more or less
 a direct translation of the author's Matlab code, though some changes have been
 made for speed and efficiency:
@@ -30,4 +30,12 @@ MSMVSampEn(mat = data, M, tau, eps, scaleMat = T)
 where `M` is the embedding dimension, `rau` is the time lag parameter, 
 `eps` is the time scale, and `scaleMat = T` specifies that the data are scaled.
 
+## Features
+MSMVSampEn is capable of computing sample entropy for univariate or multivariate signals at arbitrary time scales. Currently, it only implements the coarsegraining procedure described by Ahmed and Mandic, although, as Humeau-Heurtier (2015) points out, this method has serious shortcomings. In the future, I hope to implement more sophistic methods of extracting informations at larger timescales. 
+
+The package allows for the specification of an arbitrary summary statistic to be used during coarsegraining by passing a function argument to MSMVSampEn(). This function is applied to each bin during coarsegraining. When this function in the mean (default), this gives the usual sample entropy, though, as Humeau-Heurtier mentions, other statistics (such as higher moments), are occasionally interesting.
+
+## References
 Ahmed, M. U., & Mandic, D. P. (2011). Multivariate multiscale entropy: A tool for complexity analysis of multichannel data. Physical Review E, 84(6), 061918.
+
+Humeau-Heurtier, A. (2015). The multiscale entropy algorithm and its variants: A review. Entropy, 17(5), 3110-3123.
