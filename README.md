@@ -25,10 +25,10 @@ data <- matrix(rnorm(3000), nrow = 3)
 ```
 and then do
 ```r
-MSMVSampEn(mat = data, M, tau, eps, scaleMat = T)
+MSMVSampEn(mat = data, M, tau, r, eps, scaleMat = T)
 ```
-where `M` is the embedding dimension, `rau` is the time lag parameter, 
-`eps` is the time scale, and `scaleMat = T` specifies that the data are scaled.
+where `M` is the embedding dimension, `rau` is the time lag parameter, `r` is the 
+similarity threshold, `eps` is the time scale, and `scaleMat = T` specifies that the data are scaled.
 
 ## Features
 MSMVSampEn is capable of computing sample entropy for univariate or multivariate signals at arbitrary time scales. Currently, it only implements the coarsegraining procedure described by Ahmed and Mandic, although, as Humeau-Heurtier (2015) points out, this method has serious shortcomings. In the future, I hope to implement more sophistic methods of extracting informations at larger timescales. 
