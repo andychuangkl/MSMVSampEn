@@ -17,7 +17,7 @@ The package can easily be installed with the `devtools` package using
 ```r
 devtools::install_github('areshenk/MSMVSampEn')
 ```
-Entropy is them computed using the `MSMVSampEn()` function. For example, 
+Entropy is then computed using the `MSMVSampEn()` function. For example, 
 to compute the entropy of a 3-variate time series containing white noise,
 we create a `3xN` matrix
 ```r
