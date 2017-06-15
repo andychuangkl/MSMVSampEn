@@ -27,7 +27,7 @@ and then do
 ```r
 MSMVSampEn(mat = data, M, tau, r, eps, scaleMat = T)
 ```
-where `M` is the embedding dimension, `rau` is the time lag parameter, `r` is the 
+where `M` is the embedding dimension, `tau` is the time lag parameter, `r` is the 
 similarity threshold, `eps` is the time scale, and `scaleMat = T` specifies that the data are scaled.
 
 ## Features
