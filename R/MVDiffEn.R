@@ -38,10 +38,29 @@ MVDiffEn = function(mat, M, tau, r, breaks = 100, scaleMat = TRUE){
     # the tolerance r.
     N  <- nSamples - nn
     A  <- vectorEmbed(mat, M, tau)
-    d  <- diff(A, method = 'maximum')
-    p  <- hist(d, plot = F, breaks = breaks)$density
-    ent <-  -1/(length(p)) * sum(p * log(p, base = 2))
     
-    return(ent)
-    
+    # Do entropy piecewise if too many observations
+    k <- dim(A)[1]
+    if (k <= 1000){
+        d  <- dist(A, method = 'maximum')
+        p  <- hist(d, plot = F, breaks = breaks)$density
+        p <- p[-which(p == 0)]
+        ent <-  -1/(length(p)) * sum(p * log(p, base = 2))
+        return(ent)
+    } else {
+        pad <- c(1:k, rep(NA, 1000 - k %% 1000))
+        idx <- matrix(sample(pad, length(pad)),
+                      nrow = length(pad) / 1000)
+        ent <- numeric(dim(idx)[1])
+        for (i in 1:length(ent)){
+            idx.dummy <- idx[i,]
+            idx.dummy <- idx.dummy[-is.na(idx.dummy)]
+            dummy <- A[idx.dummy,]
+            d  <- dist(dummy, method = 'maximum')
+            p  <- hist(d, plot = F, breaks = breaks)$density
+            p  <- p[-which(p == 0)]
+            ent[i] <-  -1/(length(p)) * sum(p * log(p, base = 2))
+        }
+        return(mean(ent))
+    }
 }
