@@ -1,3 +1,4 @@
 useDynLib(MSMVSampEn)
-export(MVSampEn, MSMVSampEn)
+export(MVSampEn, MSMVSampEn,
+       MVDiffEn, MSMVDiffEn)
 importFrom(Rcpp, evalCpp)
