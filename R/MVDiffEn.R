@@ -1,4 +1,4 @@
-MVDiffEn = function(mat, M, tau, r, breaks = 100, scaleMat = TRUE){
+MVDiffEn = function(mat, M, tau, breaks = 100, scaleMat = TRUE){
     # Returns the multivariate entropy of a time series. Function accepts
     # five arguments:
     #   mat:      A pxn matrix containing a p-variate time series
