@@ -37,13 +37,13 @@ MVDiffEn = function(mat, M, tau, breaks = 100, scaleMat = TRUE){
     # Count the number of match templates of length m closed within
     # the tolerance r.
     N  <- nSamples - nn
-    A  <- MSMVSampEn:::vectorEmbed(mat, M, tau)
+    A  <- vectorEmbed(mat, M, tau)
     
     # Do entropy piecewise if too many observations
     k <- dim(A)[1]
     if (k <= 1000){
         d  <- dist(A, method = 'maximum')
-        p  <- hist(d, plot = F, breaks = breaks)$density
+        p  <- hist(d, plot = F, breaks = breaks)$counts / length(d)
         p <- p[-which(p == 0)]
         ent <-  -1/(length(p)) * sum(p * log(p, base = 2))
         return(ent)
@@ -57,7 +57,7 @@ MVDiffEn = function(mat, M, tau, breaks = 100, scaleMat = TRUE){
             idx.dummy <- idx.dummy[!is.na(idx.dummy)]
             dummy <- A[idx.dummy,]
             d  <- dist(dummy, method = 'maximum')
-            p  <- hist(d, plot = F, breaks = breaks)$density
+            p  <- hist(d, plot = F, breaks = breaks)$counts / length(d)
             p  <- p[p != 0]
             ent[i] <-  -1/(length(p)) * sum(p * log(p, base = 2))
         }
