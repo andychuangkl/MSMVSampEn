@@ -58,7 +58,7 @@ MVDiffEn = function(mat, M, tau, r, breaks = 100, scaleMat = TRUE){
             dummy <- A[idx.dummy,]
             d  <- dist(dummy, method = 'maximum')
             p  <- hist(d, plot = F, breaks = breaks)$density
-            p  <- p[-which(p == 0)]
+            p  <- p[p != 0]
             ent[i] <-  -1/(length(p)) * sum(p * log(p, base = 2))
         }
         return(mean(ent))
