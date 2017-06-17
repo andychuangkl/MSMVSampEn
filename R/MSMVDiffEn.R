@@ -1,4 +1,4 @@
-MSMVDiffEn = function(mat, M, tau, r, eps = 1, breaks = 100, 
+MSMVDiffEn = function(mat, M, tau, eps = 1, breaks = 100, 
                       scaleMat = TRUE, fun = mean, ...){
     # Wrapper for entropy.R that allows the user to specify an integer scale
     # parameter eps. The time series is coarsegrained, and then the entropy is
@@ -13,5 +13,5 @@ MSMVDiffEn = function(mat, M, tau, r, eps = 1, breaks = 100,
     #   scaleMat: Whether or not to scale the rows of the time series
     
     X <- coarsegrainMultivariate(mat, eps, fun, ...)
-    return(MVDiffEn(X, M, tau, r, breaks, scaleMat))
+    return(MVDiffEn(X, M, tau, breaks, scaleMat))
 }
