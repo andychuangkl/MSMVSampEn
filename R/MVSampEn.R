@@ -43,7 +43,7 @@ MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
 
   # Error checking
   if (p1 == 0)
-    stop('Zero matches found for p1. Consider increasing the tolerance r')
+    return(NA)
 
   I  <- diag(rep(1, nVariables))
   M2 <- matrix(rep(M, nVariables), nrow = nVariables, byrow = T) + I
@@ -57,7 +57,7 @@ MVSampEn = function(mat, M, tau, r, scaleMat = TRUE){
 
   # Error checking
   if (p2 == 0)
-    stop('Zero matches found for p2. Consider increasing the tolerance r')
+    return(NA)
 
   return(log(p1) - log(p2))
 
