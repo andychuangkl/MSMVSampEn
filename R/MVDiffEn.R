@@ -59,7 +59,7 @@ MVDiffEn = function(mat, M, tau, breaks = 100, scaleMat = TRUE){
             d  <- dist(dummy, method = 'maximum')
             p  <- hist(d, plot = F, breaks = breaks)$counts / length(d)
             p  <- p[p != 0]
-            ent[i] <-  -1/(length(p)) * sum(p * log(p, base = 2))
+            ent[i] <-  -1/log(length(p), base = 2) * sum(p * log(p, base = 2))
         }
         return(mean(ent))
     }
