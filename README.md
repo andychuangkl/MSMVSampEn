@@ -12,6 +12,8 @@ moderately sized datasets. Instead, I simply tally the number of vectors lying
 within the distance threshold r, sidestepping the distance matrix calculation
 entirely.
 
+The package additionally implements the distribution entropy (DistEn) measure described by Karmakar, Udhayakumar, and Palaniswami (2015), which I call differential entropy or "DiffEn" because I made a typo and have no motivation to change it. Unlike SampEn, this requires the full distance matrix to be stored in memory at once. To avoid this, I randomly sample elements of the distance matrix 1000 at a time, and compute the average of the resulting entropy estimates.
+
 ## Installation
 The package can easily be installed with the `devtools` package using
 ```r
